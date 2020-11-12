@@ -1,5 +1,5 @@
 # flutter-firebase-card-demo
-[ a.o. 11/11/2020 ongoing - not complete] A complete digital Business Contact-Card social network.
+### [ a.o. 11/11/2020 ongoing - not complete] A complete digital Business Contact-Card social network.
 
 This project intends to accomplish the following two distinct functionalities to provide a complete end-to-end digital business card manager:
 
@@ -27,6 +27,19 @@ Adobe XD, Flutter, Firebase.
 1. The business cards: user created & scanned to be stored in Firestore. 
 2. Storing the photographs of scanned physical business cards in Firebase Storage bucket.
 
+## Packages a.o. 12/11/2020
+  - google_fonts: ^1.1.0
+  - firebase_core: ^0.5.0
+  - firebase_auth: ^0.18.0+1
+  - http: ^0.12.2
+  - google_sign_in: ^4.5.3
+  - cloud_firestore: ^0.14.0+2
+  - time_machine: ^0.9.13
+  - flutter_signin_button: ^1.1.0
+  - hexcolor: ^1.0.4
+  - flutter_svg: ^0.19.0
+  - uuid: ^2.2.2
+  
 Working Video: 
 
 [![Alt text](https://img.youtube.com/vi/qSlq393dCOI/0.jpg)](https://www.youtube.com/watch?v=qSlq393dCOI)
