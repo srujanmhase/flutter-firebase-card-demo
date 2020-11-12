@@ -16,12 +16,14 @@ This project intends to accomplish the following two distinct functionalities to
 2. Using Smartphone/Tablet camera to scan existing physical business cards, using Firebase ML to scan the text and save it in the form of card in their "Scanned cards" section.
 [not-implemented]
 
-What is planned to accomplish: To make physical business cards redundant during in-person business meetings and making the vast chunk of physical business cards of power users easily searchable and more accessible.
+## What is planned to accomplish
+To make physical business cards redundant during in-person business meetings and making the vast chunk of physical business cards of power users easily searchable and more accessible.
 
-Technology Stack: Adobe XD, Flutter, Firebase.
+## Technology Stack
+Adobe XD, Flutter, Firebase.
 
 
-Appendix:
+## Appendix:
 1. The business cards: user created & scanned to be stored in Firestore. 
 2. Storing the photographs of scanned physical business cards in Firebase Storage bucket.
 
@@ -29,6 +31,15 @@ Working Video:
 
 [![Alt text](https://img.youtube.com/vi/qSlq393dCOI/0.jpg)](https://www.youtube.com/watch?v=qSlq393dCOI)
 
-Firestore Storage Structure
+## Firestore Storage Structure
+![alt text](https://github.com/srujanmhase/flutter-firebase-card-demo/blob/main/arch1.JPG?raw=true)
+Fig.1: Consolidated Card List with details and doc.id: UUID (v4) generated at the time of creation of the card.
 
-Service Delivery Structure
+![alt text](https://github.com/srujanmhase/flutter-firebase-card-demo/blob/main/arch2_LI.jpg?raw=true)
+Fig.2: Individual users with their doc.id: "Firebase Auth uid"; nested under which is a simple latest login time in UTC and a collection "cards"
+
+![alt text](https://github.com/srujanmhase/flutter-firebase-card-demo/blob/main/arch3_LI.jpg?raw=true)
+Fig.3: The nested cards collection inside the individual user document which consist of a list of docs with UUIDs of the cards created BY the users.
+
+## Service Delivery Structure
+As indicated above, each individual firebase auth uid document will have nested "collection" of card UUIDs acting as a list of cards the auth ID has the permission to edit. The changes will be written to the main "cards" collection. The Card UUID will point to the right card in the collection. The card information is stored in the 'global' collection i.e., outside the individual Firebase auth uid so that when the card information is shared, the Firebase auth uid of the card 'owner' doesn't need to be sent over the network.
